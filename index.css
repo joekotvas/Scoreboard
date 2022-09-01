@@ -1,0 +1,240 @@
+:root {
+    --teal: #00CBC0;
+    --amber: #FBBF24;
+    --rose: #F94F6D;
+    --silver: #D9D9D9;
+    --water: #CEEDEB;
+    --translucentblue: #01176d80;
+    --imperialblue: #01176d;
+    --aqua-gradient: linear-gradient(0deg, rgba(2,85,110,1) 0%, rgba(1,132,124,1) 100%);
+    --black-gradient: linear-gradient(0deg, rgba(22,22,22,1) 0%, rgba(61,61,61,1) 50%, rgba(71,71,71,1) 100%);
+}
+
+@font-face {
+    font-family: 'Cursed Timer ULiL';
+    font-style: normal;
+    font-weight: 400;
+    src: local('Cursed Timer ULiL'), url('https://fonts.cdnfonts.com/s/40642/CursedTimerUlil-Aznm.woff') format('woff');
+}
+
+body {
+    margin: 0;
+    color: white;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+/* SCOREBOARD */
+
+div#scoreboard {
+    display: flex;
+    justify-content: space-around;
+    max-width: 700px;
+    min-width: 600px;
+    margin: 38px auto 0;
+    padding: 30px 0;
+    background: var(--aqua-gradient);
+    border: solid 6px var(--silver);
+    box-shadow: 0 0 10px #333;
+}
+
+div.team-display {
+    flex-basis: 28%;
+    text-align: center;
+    padding: 0;
+}
+
+#center-display {
+    flex-basis: 44%;
+}
+
+h1, h2, h3, h4, h5 {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+output {
+    display: block;
+    background: var(--black-gradient);
+    color: var(--amber);
+    padding: 10px 0;
+    margin: 0 auto;
+    text-align: center;
+    font-family: 'Cursed Timer ULiL', sans-serif;
+}
+
+/* TEAM DISPLAYS */
+
+div.team-display h3 {
+    font-size: 40px;
+    line-height: 36px;
+    text-align: center;
+    margin: 25px 0 18px;
+    border-bottom: solid 2px var(--silver);
+    padding: 0 0 6px;
+}
+
+div.team-display#home-display .score output {
+    color: var(--teal);
+}
+
+div.team-display#guest-display .score output {
+    color: var(--rose);
+}
+
+div.score {
+margin: 10px 0 30px;
+}
+
+div.score output {
+    height: 105px;
+    font-size: 95px;
+    margin: 0 18px;
+}
+
+div.score .buttons {
+    margin-left: 14px;
+    margin-right: 14px;
+}
+
+div.fouls {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 10px 18px;
+}
+
+div.fouls output {
+    flex-basis: 50%;
+    color: var(--amber);
+    font-size: 50px;
+    margin: 0;
+}
+
+div.fouls h4 {
+    font-size: 15px;
+    line-height: 32px;
+    text-align: left;
+    margin-left: 10px;
+}
+
+div.fouls .buttons {
+    flex-basis: 50%;
+    text-align: center;
+    justify-content: space-around;
+    margin-left: 0;
+    margin-right: 0;
+}
+
+
+/* CENTER DISPLAY */
+
+div#timer {
+    padding: 7px;
+    border: solid 2px var(--silver);
+    border-radius: 5px;
+}
+
+div#timer output {
+    font-size: 90px;
+}
+
+#possession-and-period {
+    display: flex;
+    margin: 16px 0;
+}
+
+#possession-and-period h3 {
+    text-align: center;
+    margin-top: 0;
+    font-size: 28px;
+    line-height: 48px;
+    margin-bottom: 12px;
+}
+
+#possession-and-period > div.possession {
+    flex: 1;
+    padding: 0 9px;
+}
+
+#possession-and-period > div.possession output {
+    font-weight: bold;
+    height: 24px;
+    padding: 12px;
+    background-image: var(--black-gradient), url('leftarrow.svg');
+    background-attachment: cover, cover;
+}
+
+#possession-and-period > div.possession output img {
+    width: 20px;
+    height: 24px;
+    opacity: 0;
+}
+
+#possession-and-period > div.possession output.active img {
+    opacity: 1;
+}
+
+#possession-and-period > div.possession button {
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 14px;
+    line-height: 20px;
+    height: auto;
+    padding: 3px 3px;
+}
+
+#possession-and-period > div#period {
+    flex: 3;
+}
+
+#possession-and-period > div#period output {
+    font-size: 80px;
+    width: 110px;
+}
+
+#possession-and-period > div#period .buttons {
+    padding: 0 10%;
+}
+
+/* CONTROLS */
+
+div.buttons {
+    display: flex;
+    justify-content: space-between;
+    overflow: visible;
+    margin: -10px 0 -35px;
+    transition: all .1s;
+    opacity: 0;    
+    font-family: 'Cursed Timer ULiL', sans-serif;
+}
+
+#scoreboard:hover div.buttons {
+    display: flex;
+    transition: all .1s;
+    opacity: 1;
+}
+
+#scoreboard button {
+    background-color: transparent;
+    border: solid 2px var(--water);
+    border-radius: 5px;
+    color: var(--water);
+    background-color: var(--translucentblue);
+    padding: 0 6px;
+    height: 36px;
+    line-height: 36px;
+    display: block;
+    cursor: pointer;
+}
+
+#scoreboard button:hover {
+    box-shadow: 0 0 10px #333;
+    color: white;
+}
+
+#scoreboard button:active {
+    background-color: var(--imperialblue);
+}
+
+div.buttons button.increment {
+    font-family: 'Cursed Timer ULiL', sans-serif;
+    font-size: 18px;
+}

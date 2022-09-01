@@ -1,0 +1,77 @@
+<html>
+    <head><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.css">
+        <link rel="stylesheet" href="index.css">
+    </head>
+    <body>
+        <div id="scoreboard">
+            <div id="home-display" class="team-display">
+                <h3>HOME</h3>
+                <div class="score">
+                    <output>0</output>
+                    <div class="buttons controls-overlay">
+                        <button class="increment" value="1">+1</button>
+                        <button class="increment" value="2">+2</button>
+                        <button class="increment" value="3">+3</button>
+                    </div>
+                </div>
+                <div class="fouls">
+                    <output>0</output>
+                    <h4>FOULS</h4>
+                    <div class="buttons controls-overlay">
+                        <button value="1">+F</button>
+                    </div>
+                </div>
+            </div>
+            <div id="center-display">
+                <div id="timer">
+                    <div class="buttons">
+                        <button>NEW GAME</button>
+                        <button>RESUME</button>
+                    </div>
+                    <output>00:00</output>
+                </div>
+                <div id="possession-and-period">
+                    <div class="home possession">
+                        <output><img src="leftarrow.svg"></output>
+                        <div class="buttons">
+                            <button>POS</button>
+                        </div>
+                    </div>
+                    <div id="period">
+                        <h3>PERIOD</h3>
+                        <output>1</output>
+                        <div class="buttons">
+                            <button>-1</button>
+                            <button>+1</button>
+                        </div>
+                    </div>
+                    <div class="guest possession"">
+                        <output><img src="rightarrow.svg"></output>
+                        <div class="buttons">
+                            <button>POS</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="guest-display" class="team-display">
+                <h3>GUEST</h3>
+                <div class="score">
+                    <output>0</output>
+                    <div class="buttons controls-overlay">
+                        <button class="increment" value="1">+1</button>
+                        <button class="increment" value="2">+2</button>
+                        <button class="increment" value="3">+3</button>
+                    </div>
+                </div>
+                <div class="fouls">
+                    <output>0</output>
+                    <h4>FOULS</h4>
+                    <div class="buttons controls-overlay">
+                        <button value="1">+F</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script src="index.js"></script>
+    </body>
+</html>

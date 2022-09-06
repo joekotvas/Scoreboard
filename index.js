@@ -69,7 +69,7 @@ function togglePossession(team) {
     const activateDisplay = (display) => display.classList.add('active')
     const deactivateDisplay = (display) => display.classList.remove('active')
 
-    const currentPossession = home.possession.val ? 'home' : guest.possession.val ? 'guest' : 0
+    const currentPossession = home.possession.val ? 'home' : away.possession.val ? 'away' : 0
 
     if (currentPossession === 0) {
         team.possession.val = 1
@@ -78,7 +78,7 @@ function togglePossession(team) {
         team.possession.val = 0
         deactivateDisplay(team.possession.display)
     } else {
-        const competition = (team.name === 'home') ? guest : home
+        const competition = (team.name === 'home') ? away : home
         team.possession.val = 1
         competition.possession.val = 0
         activateDisplay(team.possession.display)
@@ -109,7 +109,7 @@ function powerOff() {
 
 const home = new Team('home')
 
-const guest = new Team('guest')
+const away = new Team('away')
 
 addMiscHandlers()
 

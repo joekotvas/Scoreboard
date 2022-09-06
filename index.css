@@ -76,7 +76,7 @@ div.team-display#home-display .score output {
     color: var(--teal);
 }
 
-div.team-display#guest-display .score output {
+div.team-display#away-display .score output {
     color: var(--rose);
 }
 
